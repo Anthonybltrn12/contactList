@@ -9,12 +9,12 @@ const dummyContacts = [
   ];
 
 export default function ContactList(){
-    const [contacts, setContacts] = useState(dummyContacts)
+    const [contacts, setContacts] = useState([])
 //    console.log("contacts:", Contacts)
 useEffect(() =>{
     async function fetchContacts(){
         try{
-          const response = await fetch('https://jsonplace-univclone.herokuapp.com/users');
+          const response = await fetch('https://jsonplaceholder.typicode.com/users');
           const newData = await response.json();
           console.log(newData);
            setContacts(newData);
